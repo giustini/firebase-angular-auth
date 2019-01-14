@@ -1,13 +1,21 @@
 <mat-toolbar color="primary">
   <img class="toolbar-logo" src="https://firebase.google.com/_static/images/firebase/touchicon-180.png">
-  <h4>+</h4>
+  <h1>+</h1>
   <img class="toolbar-logo" src="https://angular.io/assets/images/logos/angular/angular.png">
 
   <span class="toolbar-filler"></span>
 
-  <button mat-raised-button color="accent" (click)="signIn()">SIGN IN</button>
+  <button *ngIf="!authService.user" mat-raised-button color="accent" (click)="signIn()">SIGN IN</button>
+  <button *ngIf="authService.user" mat-raised-button color="accent" (click)="signOut()">SIGN OUT</button>
+
 </mat-toolbar>
 
-<div style="text-align:center">
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div *ngIf="!authService.user" class="user-info">
+  <p>Press the sign in button</p>
+</div>
+
+<div *ngIf="authService.user" class="user-info">
+  <img src="{{ authService.user.avatar }}">
+  <p>{{ authService.user.name }}</p>
+  <p>{{ authService.user.email }}</p>
 </div>
