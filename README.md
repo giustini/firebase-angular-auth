@@ -1,27 +1,50 @@
-# FirebaseAngularAuth
+# Firebase + Angular authentication base project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+This is a [Firebase](https://firebase.google.com/) + [Angular](https://angular.io/) base project which provides an OAuth2 Google connection through [Firebase Authentication](https://firebase.google.com/docs/auth/).
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Just clone this project with
 
-## Code scaffolding
+```
+git clone https://github.com/giustini/firebase-angular-auth.git
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+and start building your awesome Angular app with Google authentication.
 
-## Build
+## Setting up your app
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+You must sign in Firebase with your Google account and create your project. Then click the "Add firebase to your web app" button and copy the firebase config it provides, create a `/src/config.ts` file and paste the config in it. This file content should look like this:
 
-## Running unit tests
+```
+export const firebaseConfig = {
+  apiKey: '<YOU_API_KEY>',
+  authDomain: '<YOUR_AUTH_DOMAIN>',
+  databaseURL: '<YOUR_DATABASE_URL>',
+  projectId: '<YOUR_PROJECT_ID>',
+  storageBucket: '<YOUR_STORAGE_BUCKET>',
+  messagingSenderId: '<YOUR_MESSAGE_SENDER_ID'
+};
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+**Please remember this file must NOT be commited.**
 
-## Running end-to-end tests
+## Installation
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Install npm packages
+Install the npm packages described in the `package.json` file:
+```
+npm install
+```
 
-## Further help
+### Run development server
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The `npm start` command first compiles the application, then simultaneously re-compiles and runs the `lite-server`. Both the compiler and the server watch for file changes.
+```
+npm start
+```
+and navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. You can shut the server down manually with `Ctrl-C`.
+
+## Dependencies
+
+This project uses the official [`angularfire2`](https://github.com/angular/angularfire2) client library for Firebase and Angular by installing the [`firebase`](https://www.npmjs.com/package/firebase) and [`@angular/fire`](https://www.npmjs.com/package/@angular/fire) dependencies.
