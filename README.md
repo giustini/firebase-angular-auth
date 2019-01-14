@@ -48,3 +48,5 @@ and navigate to `http://localhost:4200/`. The app will automatically reload if y
 ## Dependencies
 
 This project uses the official [`angularfire2`](https://github.com/angular/angularfire2) client library for Firebase and Angular by installing the [`firebase`](https://www.npmjs.com/package/firebase) and [`@angular/fire`](https://www.npmjs.com/package/@angular/fire) dependencies.
+
+The UI implementation has been made using [`Angular Material`](https://material.angular.io/).
