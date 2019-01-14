@@ -2,4 +2,8 @@ mat-toolbar {
   .toolbar-logo {
     height: 50px;
   }
+
+  .toolbar-filler {
+    flex: 1 1 auto;
+  }
 }
