@@ -1,11 +1,16 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
-import { AppComponent } from "./app.component";
 import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+
 import { MatButtonModule, MatToolbarModule } from "@angular/material";
 
+import { AppComponent } from "./app.component";
+import { AuthService } from "./services/auth.service";
+
 import { firebaseConfig } from "../config";
+
 
 @NgModule({
   declarations: [
@@ -15,13 +20,16 @@ import { firebaseConfig } from "../config";
     BrowserModule,
     MatToolbarModule,
     MatButtonModule,
+    AngularFireAuthModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   exports: [
     MatToolbarModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
