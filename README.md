@@ -50,3 +50,27 @@ and navigate to `http://localhost:4200/`. The app will automatically reload if y
 This project uses the official [`angularfire2`](https://github.com/angular/angularfire2) client library for Firebase and Angular by installing the [`firebase`](https://www.npmjs.com/package/firebase) and [`@angular/fire`](https://www.npmjs.com/package/@angular/fire) dependencies.
 
 The UI implementation has been made using [`Angular Material`](https://material.angular.io/).
+
+## Deploy
+
+In order to deploy your app in the Firebase is necessary to install[`firebase-tools`](https://github.com/firebase/firebase-tools) globally:
+```
+npm install -g firebase-tools
+```
+
+Then you must generate the poduction-ready Angular code. So type
+```
+ng build --prod
+```
+and all the build artifacts will be stored in the `dist/` directory.
+
+Finally navigate to the root directory of your project and execute the following commands to deploy it on Firebase Hosting:
+```
+firebase login
+firebase init
+firebase deploy
+```
+
+## Live example
+
+This base project is also deployed in Firebase and it can be accessed [here](https://fire-ng-auth-b5c2c.firebaseapp.com/).
