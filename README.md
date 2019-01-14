@@ -53,7 +53,7 @@ The UI implementation has been made using [`Angular Material`](https://material.
 
 ## Deploy
 
-In order to deploy your app in the Firebase is necessary to install[`firebase-tools`](https://github.com/firebase/firebase-tools) globally:
+In order to deploy your app in Firebase is necessary to install[`firebase-tools`](https://github.com/firebase/firebase-tools) globally:
 ```
 npm install -g firebase-tools
 ```
